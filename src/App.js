@@ -1,25 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import "./App.css";
+
+import Modal from "./Utils/Modal";
+import MainTitle from "./Components/MainTitle";
+import MenuDisplay from "./Components/MenuDisplay";
+import CombatDisplay from "./Components/CombatDisplay";
+
+import { ModalContextProvider } from "./Contexts/ModalContext";
+import { CombatantContextProvider } from "./Contexts/CombatantContext";
+import { DropDownContextProvider } from "./Contexts/DropDownContext";
+
+const StyledApp = styled.div`
+  display: grid;
+  grid-template-columns: 3rem 1fr 3rem 4fr 3rem;
+  grid-template-rows: 3rem auto 3rem 1fr 3rem;
+  text-align: center;
+  min-height: 100vh;
+  background-color: #4f4066;
+  background-image: url(https://p2.piqsels.com/preview/532/313/113/texture-concrete-grey-stone.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  font-size: 1rem;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ModalContextProvider>
+        <CombatantContextProvider>
+          <DropDownContextProvider>
+          <StyledApp>
+            <Modal />
+            <MainTitle />
+            <MenuDisplay />
+            <CombatDisplay />
+          </StyledApp>
+          </DropDownContextProvider>
+        </CombatantContextProvider>
+    </ModalContextProvider>
   );
 }
 
