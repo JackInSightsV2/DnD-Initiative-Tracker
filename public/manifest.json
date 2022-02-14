@@ -1,6 +1,6 @@
 {
-  "short_name": "Initiative Tracker",
-  "name": "Initiative Tracker - Battle Plan",
+  "short_name": "Battle Plan",
+  "name": "Battle Plan",
   "description": "Dungeons and Dragons - Inititive Tracker",
   "icons": [
     {
@@ -29,7 +29,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
